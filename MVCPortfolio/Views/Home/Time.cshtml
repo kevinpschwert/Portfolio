@@ -1,0 +1,152 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="~/Content/style1.css" rel="stylesheet" />
+
+</head>
+<body onload="startTime()">
+    <h1>Here is a random quote generator. <br> Please click on the button below to <br>get a new quote.</h1>
+
+    <div class="container">
+        <main>
+            <div class="quote-container">
+                <blockquote>
+                    <p class="quote-text" id="quote">Click the button below to generate a random quote.</p>
+                    <p id="author" class="quote-author"></p>
+
+                </blockquote>
+
+                <span class="button-container">
+                    <button type="submit" id="bobby">Get a new quote</button>
+
+                    <a class="twitter-share-button" id="tweet" href="https://twitter.com/share" data-text="Random Quote Generator Zipline" data-via="littleblacksmth" data-size="large">Tweet</a>
+                </span>
+                <div id="quote-title"></div>
+                <div style="color:black;" id="quote-content"></div>
+                <div style="color:black;" id="quote-source"></div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <h1>Show me the weather!</h1>
+    <div class="container">
+        <div style="color:black;" id="temp"></div>
+        <button id="C">Celsius</button>
+        <button id="F">Fahrenheit</button>
+        <div style="color:black;" id="humidity"></div>
+        <div style="color:black;" id="description"></div>
+        <div id="icon"></div>
+    </div>
+
+    <h1>Guess</h1>
+    <div class="container">
+        <input type="number" style="color:black;" id="guess" />
+        <button type="submit" id="pushme">Push it</button>
+        <button type="submit" id="guessme">Guess Again</button>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-3">
+                @for (var i = 1; i < 101; i++)
+            {
+                    <div class="col-md-1">
+
+                        <p id="num-@i" style="color:black;">@i</p>
+
+                    </div>
+                }
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <h1>Wiki</h1>
+    <div class="container">
+        <input type="text" id="wiki" />
+        <button type="submit" id="wikibtn">Wiki!</button>
+        <div id="showwiki" style="color:black;"></div>
+        <div id="showdata" style="color:black;"></div>
+    </div>
+
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+        
+        @using (Html.BeginForm("Bob", "Home", new { Time = "Bob"
+        }, FormMethod.Post, null))
+        {
+
+            <p>Name:</p> <input style="color:black;" ng-model="name">
+                <h1 style="color:black;">You entered: {{name}}</h1>
+                <button type="submit" style="color:black;">Hi!</button>
+        }
+    </div>
+
+
+    <div id="txt" style="color:black;"></div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/click.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            {
+                function startTime() {
+                    var today = new Date();
+                    var h = today.getHours();
+                    var m = today.getMinutes();
+                    var s = today.getSeconds();
+                    // add a zero in front of numbers<10
+                    m = checkTime(m);
+                    s = checkTime(s);
+                    return (h + ":" + m + ":" + s);
+                    t = setTimeout('startTime()', 500);
+                    function checkTime(i) {
+                        if (i < 10) {
+                            i = "0" + i;
+                        }
+                        return i;
+                    }
+                }
+                $scope.name = startTime();
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            // add a zero in front of numbers<10
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+            t = setTimeout('startTime()', 500);
+        }
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+
+</body>
+
+
+
+</html>

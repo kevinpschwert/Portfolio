@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Exercises</title>
+    <meta charset="utf-8" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/content/nivo-lightbox.css" rel="stylesheet" />
+    <link href="~/content/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/owl.theme.css" rel="stylesheet" />
+    <link href="~/Content/flexslider.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/helper.css" rel="stylesheet" />
+    <link href="~/color/deafult.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="~/img/favicon-portfolio32.png" sizes="32x32" /> 
+    <link href="~/Content/SyntaxHighlighter/shCore.css" rel="stylesheet" />
+    @*<link href="~/Content/SyntaxHighlighter/shCore.css" rel="stylesheet" />*@
+    <link href="~/Content/SyntaxHighlighter/shCoreEmacs.css" rel="stylesheet" />
+    @*<link href="~/Content/SyntaxHighlighter/shCoreEmacs.css" rel="stylesheet" />*@
+    <link href="~/Content/SyntaxHighlighter/shThemeEmacs.css" rel="stylesheet" />
+    @*<link href="~/Content/SyntaxHighlighter/shThemeEmacs.css" rel="stylesheet" />*@
+</head>
+
+<body>
+    <br />
+    <center><h1>Palindrome Exercise</h1></center>
+    <hr />
+    <br />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4">
+                <h5>Please enter a word and then click the button to see if the word you entered is a palindrome</h5>
+                <input type="text" id="inputtext" />
+                <br />
+                <br />
+                <button id="answer">Press here</button>
+                <br />
+                <br />
+                <font size="6" id="answer1" color="black"></font>
+            </div>
+            <div class="col-md-8">
+                <pre class="brush: js">
+               // Palindrome Exercise
+               $("#answer").click(function() {
+                 var str = $("#inputtext").val();
+                 var regex = /[^0-9a-zA-Z]/g
+                 str = str.toLowerCase().replace(regex, '');
+                 var test = str.split("").reverse().join("");
+                 if (test === str) {
+                     $("#answer1").text("This is a palindrome.");
+                 } else {
+                     return $("#answer1").text("This is not a palindrome.");
+                  }
+                });
+                </pre>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.sticky.js"></script>
+    <script src="~/Scripts/slippry.min.js"></script>
+    <script src="~/Scripts/jquery.flexslider-min.js"></script>
+    <script src="~/Scripts/morphext.min.js"></script>
+    <script src="~/Scripts/jquery.mb.YTPlayer.js"></script>
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+    <script src="~/Scripts/jquery.scrollTo.js"></script>
+    <script src="~/Scripts/jquery.appear.js"></script>
+    <script src="~/Scripts/stellar.js"></script>
+    <script src="~/Scripts/wow.min.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/nivo-lightbox.min.js"></script>
+    <script src="~/Scripts/jquery.nicescroll.min.js"></script>
+    @*<script src="~/Scripts/custom.js"></script>*@
+    <script src="~/Scripts/portfolio.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/shCore.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
+    <script> SyntaxHighlighter.all();</script>
+
+</body>
+
+</html>

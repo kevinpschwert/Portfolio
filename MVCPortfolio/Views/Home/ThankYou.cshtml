@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/style1.css" rel="stylesheet" />
+    <title>ThankYou</title>
+</head>
+<body id="thankyou">
+    <div class="container-fluid" id="thankcont">
+        <div class="row">
+            <center><button id="show">Click Me</button></center>
+        </div>
+        <div class="row">
+            <div>
+                <h1 id="first">Thank you so much</h1>
+                <h1 id="second">for the generous gifts that you have given</h1>
+                <h1 id="third">and your continued prayers and support that you continue to give us.</h1>
+                <h1 id="fourth">We look forward to seeing you next month!</h1>
+                <h1 id="fifth">And here is a cure picture of Landon for you to enjoy:)</h1>
+                <div id="landon">
+                    <img src="~/img/IMG_4742.jpg.jpeg" />
+                </div>
+            </div>
+        </div> 
+    </div>
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/custom.js"></script>    
+    <script src="~/Scripts/portfolio.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#show").click(function () {
+                $("#show").fadeOut("slow");
+                $("#first").fadeIn(2000)               
+                $("#second").fadeIn(5000)                
+                $("#third").fadeIn(10000);
+                $("#fourth").fadeIn(15000);
+                $("#fifth").fadeIn(25000);
+                $("#landon").fadeIn(28000);
+
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿@{ 
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+    @*<link href="css/main.css" rel="stylesheet" />*@
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+@*<body ng-app="myApp">*@
+
+
+    @*<div class="main" ng-controller="MainController">
+            <div class="container">
+                <h1>{{ title }}</h1>
+                <h4>{{ promo }}</h4>
+
+
+                <div ng-repeat="p in products">
+                    <img ng-src="{{p.cover}}" />
+                    <p class="title">{{p.name}}</p>
+                    <p class="price">{{p.price | currency}}</p>
+                    <p class="date">{{p.pubdate | date}}</p>
+
+                    <div class="rating">
+                        <p class="likes" ng-click="plusOne($index)">{{p.likes}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>*@
+
+    <body ng-app="forecast">
+
+        <div class="main" ng-controller="MainController">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 col-sm-offset-7">
+                        <h1>{{ fiveDay.city_name }}</h1>
+                        <h2>5-day forecast</h2>
+                        <div class="forecast" ng-repeat="day in fiveDay.days">
+                            <div class="day row">
+                                <div class="weekday col-md-4">
+                                    <app-info>{{ day.datetime | date }}</app-info>
+                                </div>
+                                <div class="weather col-md-3">
+                                    <img ng-src="{{ day.icon }}">
+                                </div>
+                                <div class="weather col-md-1">
+                                </div>
+                                <div class="high col-md-2">
+                                    <app-info>{{ day.high }}&deg;</app-info>
+                                </div>
+                                <div class="low col-md-2">
+                                    <app-info">{{ day.low }}&deg;</app-info">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Modules -->
+        <script src="~/Scripts/app.js"></script>
+
+        <!-- Controllers -->
+        <script src="~/Scripts/MainController.js"></script>
+        @*<script src="~/Scripts/appInfojs.js"></script>
+        <script src="~/Scripts/installApp.js"></script>*@
+        <script src="~/Scripts/forecast.js"></script>
+
+    </body>
+</html>

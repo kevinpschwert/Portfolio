@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/style1.css" rel="stylesheet" />
+    <title>ThankYou</title>
+</head>
+<body id="thankyou">
+    <div class="container-fluid" id="thankcont">
+        <div class="row">
+            <button id="show">click</button>
+        </div>
+        <div class="row">
+            <div>
+                <h1 id="first">Hi!</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="second">
+                <h1>Bye!</h1>
+            </div>
+        </div>
+    </div>
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/custom.js"></script>    
+    <script src="~/Scripts/portfolio.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#show").click(function () {
+                $("#first").fadeIn("slow").delay(4000).fadeOut("slow");
+                $("#second").fadeIn(5000);
+            });
+        });
+    </script>
+</body>
+</html>

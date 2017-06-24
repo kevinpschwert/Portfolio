@@ -1,0 +1,23 @@
+﻿body {
+    background-color: aliceblue; 
+}
+
+h1 {
+    padding-top: 25px;
+}
+
+h6 {
+    padding-left: 15px;    
+}
+
+button {
+    color: black;
+    background-color: #5555d1;
+}
+
+hr {
+    height: 5px;
+    background-color: black;
+    width: 50%;
+}
+

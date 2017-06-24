@@ -1,0 +1,98 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Exercises</title>
+    <meta charset="utf-8" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/content/nivo-lightbox.css" rel="stylesheet" />
+    <link href="~/content/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/owl.theme.css" rel="stylesheet" />
+    <link href="~/Content/flexslider.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/helper.css" rel="stylesheet" />
+    <link href="~/color/deafult.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="~/img/favicon-portfolio32.png" sizes="32x32" /> 
+    <link href="~/Content/SyntaxHighlighter/shCore.css" rel="stylesheet" />
+    <link href="~/Content/SyntaxHighlighter/shCoreEmacs.css" rel="stylesheet" />
+    <link href="~/Content/SyntaxHighlighter/shThemeEmacs.css" rel="stylesheet" />
+</head>
+<body>
+
+    <br />
+    <center><h1>Factorial Exercise</h1></center>
+    <hr />
+    <br />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4">
+                <h5>Please enter a positive number and it will factorialize it for you. </h5>
+                <div class="row">
+                    <h6>Number 1: <input type="number" id="factor1" /></h6>
+                </div>
+                <br />
+                <button id="revealit">Press here</button>
+                <br />
+                <br />    
+                <img id="buzz" src="~/img/buzz.jpg" />
+                <font size="6" id="revealit1" color="black"></font>
+            </div>
+            <div class="col-md-8">
+                <pre class="brush: js">
+               // Factorial Exercise
+              $("#revealit").click(function () {
+               
+               var factor1 = $("#factor1").val();
+               var regex = /^[0-9]+$/;
+               if (factor1 < 0 || !factor1.match(regex)) {
+                   $("#revealit1").text("Please enter a positive number only");
+               } else if (factor1 == 0) {
+                   $("#revealit1").text("Your number factorialized is 1.");                
+               } else {
+               
+               for (var i=(factor1-1); i>=1; i--) {
+                   factor1 = factor1 * i;
+               }
+               $("#revealit1").text("Your number factorialized is " + factor1 + ".");
+               }
+               
+           });
+</pre>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.sticky.js"></script>
+    <script src="~/Scripts/slippry.min.js"></script>
+    <script src="~/Scripts/jquery.flexslider-min.js"></script>
+    <script src="~/Scripts/morphext.min.js"></script>
+    <script src="~/Scripts/jquery.mb.YTPlayer.js"></script>
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+    <script src="~/Scripts/jquery.scrollTo.js"></script>
+    <script src="~/Scripts/jquery.appear.js"></script>
+    <script src="~/Scripts/stellar.js"></script>
+    <script src="~/Scripts/wow.min.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/nivo-lightbox.min.js"></script>
+    <script src="~/Scripts/jquery.nicescroll.min.js"></script>
+    @*<script src="~/Scripts/custom.js"></script>*@
+    <script src="~/Scripts/portfolio.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/shCore.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
+    <script> SyntaxHighlighter.all();</script>
+
+</body>
+
+</html>
